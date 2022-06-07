@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  font-family: 'Atyp BL Text', sans-serif;
+}
+
+body {
+  font-family: 'Atyp BL Text', sans-serif;
+  font-size: 1rem;
+  background-color: $gray-01;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  display: inline-block;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  &[disabled] {
+    cursor: not-allowed;
+  }
+}
+
+section {
+  @include responsive(1200px) {
+    padding: 6rem 0 !important;
+  }
+  @include responsive(768px) {
+    padding: 5rem 0 !important;
+  }
+  @include responsive(560px) {
+    padding: 4rem 0 !important;
+  }
+}

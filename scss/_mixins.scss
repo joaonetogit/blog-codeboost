@@ -1,0 +1,90 @@
+@mixin flex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexTotal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin grid($qtd, $gap) {
+  display: grid;
+  grid-template-columns: repeat($qtd, 1fr);
+  gap: $gap;
+}
+
+@mixin responsive($screenWidth) {
+  @media (max-width: $screenWidth) {
+    @content;
+  }
+}
+
+@mixin image-scale() {
+  .image {
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@mixin image-cover() {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+@mixin post-image($width, $height) {
+  position: relative;
+  width: $width;
+  height: $height;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+@mixin post-ul($margin-left) {
+  @include flexCenter;
+  li {
+    position: relative;
+    @include flexCenter;
+
+    &:not(:first-child) {
+      margin-left: 4rem;
+      &::after {
+        @include after-icon(-2.2rem);
+      }
+    }
+    span {
+      @include span-top-info;
+      margin-left: $margin-left;
+    }
+  }
+}
+
+@mixin span-top-info() {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 150%;
+  color: $gray-05;
+}
+
+@mixin after-icon($left) {
+  content: "";
+  position: absolute;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: #393c40;
+  border-radius: 50%;
+  left: $left;
+}
+
+

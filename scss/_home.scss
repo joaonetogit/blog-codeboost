@@ -1,0 +1,351 @@
+.s-hero-post {
+  padding-top: 8.3rem;
+  padding-bottom: 11.7rem;
+  .container {
+    @include flex(row, flex-start, space-between);
+  }
+
+  .left-container {
+    flex: 1;
+    width: 100%;
+    max-width: 72.8rem;
+    .title {
+      margin-bottom: 4.2rem;
+      h2 {
+        margin-top: 1.4rem;
+      }
+    }
+  }
+
+  .right-container {
+    flex: 1;
+    width: 100%;
+    max-width: 38.4rem;
+    margin-top: 4rem;
+
+    .all {
+      margin-top: 4.2rem;
+
+      .item-post {
+        position: relative;
+        &:not(:last-child) {
+          padding-bottom: 3.2rem;
+          margin-bottom: 3.2rem;
+
+          &::after {
+            position: absolute;
+            content: '';
+            background: url('../img/line-divisor.svg') no-repeat center center;
+            width: 100%;
+            height: 0.2rem;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(1150px) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 35rem;
+      gap: 3rem;
+    }
+  }
+
+  @include responsive(768px) {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+
+    .left-container {
+      .title {
+        @include flex(column, center, center);
+        margin-bottom: 4rem;
+      }
+
+      .info {
+        h3 {
+          max-width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    .right-container {
+      max-width: 100%;
+      h4 {
+        text-align: center;
+      }
+      .all {
+        .item-post {
+          &:not(:last-child) {
+            &::after {
+              background-size: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(560px) {
+    padding-top: 4rem;
+    .container {
+      gap: 0;
+    }
+    .left-container {
+      border-bottom: 0.1rem solid rgba($color: white, $alpha: 0.1);
+      padding-bottom: 4rem;
+      .info {
+        h3 {
+          font-size: 2.4rem;
+        }
+      }
+      .title {
+        margin-bottom: 3rem;
+      }
+    }
+
+    .right-container {
+      .all {
+        .item-post {
+          &:not(:last-child) {
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.s-articles {
+  background: linear-gradient(180deg, #0f0c1b 85.69%, rgba(15, 12, 27, 0) 100%);
+  padding-top: 11.7rem;
+  padding-bottom: 12rem;
+  border-bottom: 0.2rem solid #1c162e;
+
+  .top {
+    @include flex(row, center, space-between);
+    margin-bottom: 4rem;
+    p {
+      @include flexCenter;
+      color: $gray-06;
+      img {
+        margin-left: 1.6rem;
+      }
+    }
+  }
+
+  .all {
+    @include grid(3, 4rem 3.2rem);
+    margin-bottom: 8rem;
+  }
+
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  @include responsive(1150px) {
+    .all {
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  @include responsive(768px) {
+    .all {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @include responsive(560px) {
+    .top {
+      flex-direction: column;
+      align-items: center;
+      h2 {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .all {
+      grid-template-columns: 1fr;
+      gap: 3.2rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 2.5rem 0;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.s-podcast {
+  padding: 12rem 0;
+  border-bottom: 0.2rem solid #1c162e;
+  .top {
+    @include flex(row, center, space-between);
+    margin-bottom: 4rem;
+
+    .crtl-slide {
+      @include flex(row, center, space-between);
+      flex: 1;
+      max-width: 18.4rem;
+      .swiper-pagination {
+        position: relative;
+        width: auto;
+        bottom: 0;
+        .swiper-pagination-bullet {
+          width: 2.4rem;
+          height: 0.3rem;
+          background-color: #f67acb;
+          border-radius: 0;
+          opacity: 0.25;
+          transition: all 0.3s ease;
+          &-active {
+            opacity: 1;
+          }
+        }
+      }
+      .crtl {
+        @include flexCenter;
+        .btn {
+          transition: all 0.3s ease;
+          &.swiper-button-disabled {
+            opacity: 0.5;
+            pointer-events: none;
+          }
+          &-prev {
+            margin-right: 1.7rem;
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+  .slide-podcast {
+    position: relative;
+    overflow: hidden;
+  }
+
+  @include responsive(1150px) {
+    .container {
+      padding: 0;
+    }
+
+    .top {
+      padding: 0 1.5rem;
+      .crtl-slide {
+        justify-content: flex-end;
+        .swiper-pagination {
+          display: none;
+        }
+      }
+    }
+
+    .slide-podcast {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @include responsive(568px) {
+    .top {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.s-playlist {
+  padding-top: 8.6rem;
+  padding-bottom: 9rem;
+
+  .container {
+    @include flex(row, center, space-between);
+  }
+  .left-container {
+    max-width: 20.5rem;
+    h4 {
+      margin-top: 1.4rem;
+    }
+  }
+  .right-container {
+    @include flex(row, flex-start, space-between);
+    flex: 1;
+    max-width: 82.4rem;
+    .item-playlist {
+      &:hover {
+        h5 {
+          opacity: 1;
+        }
+      }
+      .icon {
+        @include flexCenter;
+        margin-bottom: 2.2rem;
+        img {
+          &:not(:first-child) {
+            margin-left: 3.2rem;
+          }
+        }
+      }
+      h5 {
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  @include responsive(1150px) {
+    .right-container {
+      max-width: 70rem;
+    }
+  }
+
+  @include responsive(991px) {
+    .right-container {
+      max-width: 65rem;
+    }
+  }
+
+  @include responsive(768px) {
+    .container {
+      @include flex(column, center, center);
+    }
+
+    .left-container {
+      max-width: 100%;
+      @include flex(column, center, center);
+      margin-bottom: 4rem;
+    }
+
+    .right-container {
+      width: 100%;
+      max-width: 100%;
+
+      .item-playlist {
+        @include flex(column, center, center);
+
+        h5 {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @include responsive(568px) {
+    .right-container {
+      flex-direction: column;
+      align-items: center;
+
+      .item-playlist {
+        &:not(:last-child) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}

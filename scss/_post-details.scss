@@ -1,0 +1,500 @@
+.s-details-post {
+  position: relative;
+  background-color: white;
+  padding-top: 4.8rem;
+  padding-bottom: 12rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $gray-01;
+    width: 100%;
+    height: 34.8rem;
+    z-index: 0;
+  }
+
+  .top-details {
+    position: relative;
+    z-index: 1;
+    @include flex(row, center, space-between);
+
+    .breadcrumbs {
+      @include flexCenter;
+      li {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0.4rem;
+          right: -2.5rem;
+          width: 1rem;
+          height: 1rem;
+          background: url('../img/arrow-breadcrumb.svg') no-repeat center center;
+        }
+        &:last-child {
+          &::after {
+            display: none;
+          }
+        }
+        &:not(:first-child) {
+          margin-left: 4rem;
+        }
+        a {
+          display: block;
+          font-weight: 600;
+          font-size: 1.5rem;
+          line-height: 105%;
+          color: $gray-05;
+          transition: all 0.3s ease;
+          &:hover {
+            color: white;
+          }
+        }
+
+        span {
+          font-weight: 600;
+          font-size: 1.5rem;
+          line-height: 105%;
+          color: #ffffff;
+        }
+      }
+    }
+
+    .btn {
+      @include flexCenter;
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 100%;
+      color: #ffffff;
+      transition: all 0.3 ease;
+      &:hover {
+        filter: brightness(0.6);
+      }
+      img {
+        margin-right: 1.4rem;
+      }
+    }
+  }
+
+  .featured-info-post {
+    position: relative;
+    z-index: 1;
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+
+    .image {
+      width: 100%;
+      height: 47.2rem;
+      border-radius: 0.8rem;
+      overflow: hidden;
+
+      img {
+        @include image-cover;
+      }
+    }
+
+    .box-info-post {
+      position: relative;
+      background-color: #ffffff;
+      box-shadow: 0rem 2.4rem 4rem -0.8rem rgba(16, 12, 28, 0.06);
+      border-radius: 0.8rem;
+      width: 100%;
+      max-width: 100.8rem;
+      padding: 4.8rem 7.2rem;
+      margin: 0 auto;
+      margin-top: -10.6rem;
+      z-index: 1;
+
+      h1 {
+        color: $gray-01;
+        margin-top: 2rem;
+        margin-bottom: 2.8rem;
+      }
+
+      ul {
+        @include flexCenter;
+
+        li {
+          @include flexCenter;
+
+          &:not(:first-child) {
+            margin-left: 2.4rem;
+
+            &::before {
+              content: ' ';
+              display: inline-block;
+              width: 0.4rem;
+              height: 0.4rem;
+              background: $gray-05;
+              opacity: 0.3;
+              margin-right: 2.4rem;
+            }
+          }
+
+          span {
+            font-weight: 600;
+            font-size: 1.4rem;
+            line-height: 150%;
+            color: $gray-04;
+            margin-left: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .info-post-geral {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 8rem;
+
+      .left-container {
+        position: sticky;
+        top: 11rem;
+        flex: 1;
+        max-width: 23.6rem;
+        h6 {
+          color: $gray-01;
+          margin-bottom: 4rem;
+        }
+
+        ul {
+          position: relative;
+          padding-bottom: 4rem;
+          margin-bottom: 4rem;
+
+          &::after {
+            content: '';
+            width: 100%;
+            height: 0.2rem;
+            background: url('../img/line-topics.svg') no-repeat center center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+          li {
+            &:not(:last-child) {
+              margin-bottom: 1.6rem;
+            }
+            a {
+              display: flex;
+              align-items: flex-start;
+
+              &.active,
+              &:hover {
+                &::before {
+                  background-color: $pink;
+                }
+                span {
+                  color: $gray-01;
+                }
+              }
+
+              &::before {
+                content: '';
+                width: 0.4rem;
+                height: 0.4rem;
+
+                display: inline-block;
+                background-color: $gray-05;
+                margin-top: 1.1rem;
+                margin-right: 1.6rem;
+              }
+              span {
+                flex: 1;
+                font-weight: 400;
+                font-size: 1.6rem;
+                line-height: 150%;
+                color: $gray-04;
+              }
+            }
+          }
+        }
+
+        button {
+          @include flexCenter;
+
+          &:hover {
+            span {
+              color: $pink;
+            }
+          }
+
+          span {
+            margin-left: 1.8rem;
+            font-weight: 600;
+            font-size: 1.6rem;
+            line-height: 100%;
+            color: $gray-01;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+
+      .right-container {
+        flex: 1;
+        max-width: 80rem;
+        margin-left: 7.6rem;
+
+        .content-post {
+          width: 100%;
+          border-bottom: 0.2rem solid rgba(28, 22, 46, 0.1);
+          padding-bottom: 4rem;
+          margin-bottom: 4rem;
+
+          blockquote {
+            border-left: 0.2rem solid rgba(91, 31, 166, 0.15);
+            padding-left: 2.4rem;
+            margin-bottom: 4rem;
+
+            p {
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 175%;
+              color: $gray-03;
+              margin-bottom: 0;
+            }
+          }
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            color: $gray-03;
+            margin-bottom: 2.4rem;
+          }
+          p {
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 175%;
+            color: $gray-03;
+            margin-bottom: 1.6rem;
+            a {
+              text-decoration: underline;
+              transition: all 0.2 ease;
+              &:hover {
+                filter: brightness(0.5);
+              }
+            }
+          }
+
+          ul {
+            padding-left: 1.6rem;
+            margin-left: 0.4rem;
+            li {
+              list-style-type: square;
+              font-weight: 400;
+              font-size: 1.8rem;
+              line-height: 175%;
+              color: $gray-03;
+              margin-bottom: 4rem;
+              &:not(:last-child) {
+                margin-bottom: 1.6rem;
+              }
+            }
+          }
+        }
+
+        .share {
+          @include flex(row, center, space-between);
+
+          strong {
+            font-weight: 600;
+            font-size: 1.6rem;
+            line-height: 100%;
+            color: $gray-01;
+          }
+          ul {
+            @include flexCenter;
+
+            li {
+              &:not(:first-child) {
+                margin-left: 3.3rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(1200px) {
+    .featured-info-post {
+      .info-post-geral {
+        .left-container {
+          display: none;
+        }
+        .right-container {
+          max-width: 100%;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  @include responsive(991px) {
+    .featured-info-post {
+      .box-info-post {
+        max-width: 85rem;
+        padding: 4rem;
+      }
+    }
+  }
+
+  @include responsive(768px) {
+    .featured-info-post {
+      .box-info-post {
+        max-width: 65rem;
+      }
+    }
+  }
+
+  @include responsive(568px) {
+    .top-details {
+      flex-direction: column;
+      align-items: flex-start;
+      .breadcrumbs {
+        flex-wrap: wrap;
+        margin-bottom: 4rem;
+        li {
+          &:last-child {
+            margin-left: 0;
+            width: 100%;
+            margin-top: 1.5rem;
+            span {
+            }
+          }
+        }
+      }
+    }
+
+    .featured-info-post {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      .image {
+        height: 25rem;
+      }
+
+      .box-info-post {
+        max-width: 90%;
+        padding: 2rem;
+        margin-top: -5rem;
+
+        h1 {
+          font-size: 2rem;
+          margin: 1.5rem 0;
+        }
+        ul {
+          flex-direction: column;
+          align-items: flex-start;
+
+          li {
+            &:not(:first-child) {
+              margin-left: 0;
+              margin-top: 2rem;
+              &:before {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      .info-post-geral {
+        margin-top: 4rem;
+        margin-bottom: 0;
+        .right-container {
+          .content-post {
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            blockquote {
+              padding-left: 1.5rem;
+              margin-bottom: 2rem;
+              p {
+                font-size: 1.6rem;
+              }
+            }
+            h2 {
+              font-size: 2.4rem;
+              margin-bottom: 1.5rem;
+            }
+            p {
+              font-size: 1.6rem;
+              margin-bottom: 1.5rem;
+              &:last-child {
+                margin-bottom: 0rem;
+              }
+              a {
+                font-size: 1.6rem;
+              }
+            }
+            ul {
+              margin-bottom: 1.5rem;
+              li {
+                font-size: 1.6rem;
+                &:not(:last-child) {
+                  margin-bottom: 1.5rem;
+                }
+              }
+            }
+          }
+          .share {
+            flex-direction: column;
+            align-items: flex-start;
+            strong {
+              display: block;
+              margin-bottom: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.s-posts-similar {
+  padding: 12rem 0;
+  .top {
+    @include flex(row, center, space-between);
+    margin-bottom: 4rem;
+
+    p {
+      @include flexCenter;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 150%;
+      color: $gray-06;
+
+      img {
+        margin-left: 1.6rem;
+      }
+    }
+  }
+
+  .all {
+    @include grid(3, 32px);
+  }
+
+  @include responsive(768px) {
+    .all {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @include responsive(568px) {
+    padding: 5rem 0;
+    .top {
+      flex-direction: column;
+      align-items: center;
+      h2 {
+        margin-bottom: 2rem;
+      }
+    }
+    .all {
+      grid-template-columns: 1fr;
+    }
+  }
+}

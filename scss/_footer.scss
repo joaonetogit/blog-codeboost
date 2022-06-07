@@ -1,0 +1,125 @@
+footer {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 6.3rem;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    max-width: 121.6rem;
+    height: 0.2rem;
+    top: 0;
+    left: 50%;
+    margin-left: -60.8rem;
+    background: url('../img/line-footer.svg') no-repeat center center;
+  }
+  .container {
+    @include flex(row, flex-start, space-between);
+  }
+  .left-container {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+    max-width: 82.9rem;
+
+    strong {
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 150%;
+      color: #ffffff;
+    }
+
+    p {
+      flex: 1;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 150%;
+      color: rgba(255, 255, 255, 0.8);
+      margin-left: 8.4rem;
+    }
+  }
+  .right-container {
+    @include flexCenter;
+
+    .group {
+      @include flexCenter;
+      margin-right: 7.1rem;
+
+      span {
+        color: #ffffff;
+        font-size: 1.6rem;
+        margin-right: 1.6rem;
+      }
+    }
+
+    button {
+      @include flexTotal;
+      width: 37px;
+      height: 37px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        filter: brightness(0.5);
+      }
+    }
+  }
+
+  @include responsive(1150px) {
+    padding: 6rem 0;
+    .left-container {
+      p {
+        margin-left: 3rem;
+        max-width: 70%;
+      }
+    }
+  }
+
+  @include responsive(991px) {
+    .left-container {
+      p {
+        margin-left: 3rem;
+      }
+    }
+  }
+
+  @include responsive(768px) {
+    &::before {
+      left: 0;
+      margin-left: 0;
+      background-size: cover;
+    }
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .left-container {
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 4rem;
+
+      p {
+        margin-left: 0;
+        max-width: 90%;
+        text-align: center;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  @include responsive(568px) {
+    padding: 4rem 0;
+
+    .left-container {
+      p {
+        max-width: 100%;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
